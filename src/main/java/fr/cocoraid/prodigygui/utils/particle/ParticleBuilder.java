@@ -27,11 +27,7 @@ public abstract class ParticleBuilder {
     }
 
 
-
     public abstract void sendParticle(Player player);
-
-
-
 
 
 }

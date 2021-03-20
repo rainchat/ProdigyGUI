@@ -1,6 +1,6 @@
 package fr.cocoraid.prodigygui;
 
-import fr.cocoraid.prodigygui.threedimensionalgui.ThreeDimensionGUI;
+import fr.cocoraid.prodigygui.resourse.threedimensionalgui.ThreeDimensionGUI;
 import org.bukkit.entity.Player;
 
 import java.util.HashMap;
@@ -45,10 +45,9 @@ public class ProdigyGUIPlayer {
 
     public void clearPlayer() {
         if (player == null) return;
-       // if (threeDimensionGUI != null)
-            //threeDimensionGUI.closeGui();
+        // if (threeDimensionGUI != null)
+        //threeDimensionGUI.closeGui();
     }
-
 
 
     public Player getPlayer() {
@@ -76,7 +75,6 @@ public class ProdigyGUIPlayer {
     public void updatePlayer(Player player) {
         this.player = player;
     }
-
 
 
     public float getPreviousYaw() {

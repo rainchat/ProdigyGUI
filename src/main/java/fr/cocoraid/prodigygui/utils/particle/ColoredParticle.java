@@ -1,6 +1,6 @@
 package fr.cocoraid.prodigygui.utils.particle;
 
-import fr.cocoraid.prodigygui.threedimensionalgui.itemdata.ColoredParticleData;
+import fr.cocoraid.prodigygui.resourse.threedimensionalgui.itemdata.ColoredParticleData;
 import fr.cocoraid.prodigygui.utils.UtilMath;
 import fr.cocoraid.prodigygui.utils.VersionChecker;
 import org.bukkit.Color;
@@ -12,9 +12,10 @@ public class ColoredParticle extends ParticleBuilder {
 
     private Color color;
     private double radius = 0;
+
     public ColoredParticle(Location location) {
         super(location);
-        if(ColoredParticleData.getColorableParticles().contains(particle)) {
+        if (ColoredParticleData.getColorableParticles().contains(particle)) {
             System.out.println("Error: Particle " + particle.name() + " is not available for " + getClass().getSimpleName());
             return;
         }
@@ -31,13 +32,13 @@ public class ColoredParticle extends ParticleBuilder {
     }
 
     public ColoredParticle setColor(int r, int g, int b) {
-        this.color = Color.fromBGR(b,g,r);
+        this.color = Color.fromBGR(b, g, r);
         return this;
     }
 
     @Override
     public void sendParticle(Player player) {
-        if(VersionChecker.isHigherOrEqualThan(VersionChecker.v1_13_R1)) {
+        if (VersionChecker.isHigherOrEqualThan(VersionChecker.v1_13_R1)) {
             if (particle == Particle.REDSTONE) {
                 Particle.DustOptions dustOptions = new Particle.DustOptions(color, 1);
                 for (int i = 0; i < amount; i++) {

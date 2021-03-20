@@ -11,7 +11,7 @@ import java.util.UUID;
 /**
  * A library for the Bukkit API to create player skulls
  * from names, base64 strings, and texture URLs.
- *
+ * <p>
  * Does not use any NMS code, and should work across all versions.
  *
  * @author Dean B on 12/28/2016.
@@ -23,7 +23,6 @@ public class SkullCreator {
      *
      * @param name The Player's name
      * @return The head of the Player
-     *
      * @deprecated names don't make for good identifiers
      */
     @Deprecated
@@ -39,7 +38,6 @@ public class SkullCreator {
      * @param item The item to apply the name to
      * @param name The Player's name
      * @return The head of the Player
-     *
      * @deprecated names don't make for good identifiers
      */
     @Deprecated
@@ -68,7 +66,7 @@ public class SkullCreator {
      * Creates a player skull based on a UUID. 1.13 only.
      *
      * @param item The item to apply the name to
-     * @param id The Player's UUID
+     * @param id   The Player's UUID
      * @return The head of the Player
      */
     public static ItemStack itemWithUuid(ItemStack item, UUID id) {
@@ -89,7 +87,7 @@ public class SkullCreator {
      * @return The head with a custom texture
      */
     public static ItemStack itemFromBase64(String base64, String name) {
-        ItemStack item = itemWithBase64(getPlayerSkullItem(),base64);
+        ItemStack item = itemWithBase64(getPlayerSkullItem(), base64);
         ItemMeta meta = item.getItemMeta();
         meta.setDisplayName(name);
         item.setItemMeta(meta);
@@ -98,14 +96,14 @@ public class SkullCreator {
 
     public static ItemStack itemFromBase64(String base64) {
         ItemStack item = getPlayerSkullItem();
-            return itemWithBase64(item, base64);
+        return itemWithBase64(item, base64);
 
     }
 
     /**
      * Applies the base64 string to the ItemStack.
      *
-     * @param item The ItemStack to put the base64 onto
+     * @param item   The ItemStack to put the base64 onto
      * @param base64 The base64 string containing the texture
      * @return The head with a custom texture
      */
@@ -142,7 +140,7 @@ public class SkullCreator {
     }*/
 
     private static ItemStack getPlayerSkullItem() {
-        if(VersionChecker.isHigherOrEqualThan(VersionChecker.v1_13_R2))
+        if (VersionChecker.isHigherOrEqualThan(VersionChecker.v1_13_R2))
             return new ItemStack(Material.PLAYER_HEAD);
         else return new ItemStack(Material.valueOf("SKULL_ITEM"), 1, (short) 3);
 

@@ -1,11 +1,11 @@
 package fr.cocoraid.prodigygui.utils;
 
-import java.io.File;
-import java.io.IOException;
-
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.Plugin;
+
+import java.io.File;
+import java.io.IOException;
 
 /**
  * A simple utility class to manage configurations with a file associated to them.

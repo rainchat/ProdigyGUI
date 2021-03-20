@@ -3,8 +3,7 @@ package fr.cocoraid.prodigygui.utils.textanim;
 
 import java.util.ArrayList;
 
-public class Glow   {
-
+public class Glow {
 
 
     //Default glow options.
@@ -18,14 +17,14 @@ public class Glow   {
 
     private ArrayList<String> frames = new ArrayList<>();
     private int frame = 0;
+
     public Glow(String text, String normaltextcolor, String startColor, String middleColor, String endColor, int size, int pause) {
 
 
-
         String normalFormat = normaltextcolor;
-        String startFormat =  startColor;
+        String startFormat = startColor;
         String middleFormat = middleColor;
-        String endFormat =    endColor;
+        String endFormat = endColor;
 
 
         int length = text.length();
@@ -62,15 +61,15 @@ public class Glow   {
                 middlePart = text.substring(pos - 1 - startsub - endsub, pos - 1 - endsub);
             }
 
-            if(pos > 0 && pos <= length) {
+            if (pos > 0 && pos <= length) {
                 endPart = text.substring(pos - 1, pos);
             }
 
-            if(pos < length) {
+            if (pos < length) {
                 last = text.substring(pos);
             }
 
-            if(pos >= iterations - length) {
+            if (pos >= iterations - length) {
                 before = text.substring(0, pos + 1 - (iterations - length));
             }
 
@@ -91,13 +90,12 @@ public class Glow   {
     }
 
     public String next() {
-        if(frame >= frames.size())
+        if (frame >= frames.size())
             frame = 0;
         String s = frames.get(frame);
         frame++;
         return s;
     }
-
 
 
 }

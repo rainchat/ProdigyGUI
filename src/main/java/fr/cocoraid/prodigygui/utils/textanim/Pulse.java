@@ -6,10 +6,12 @@ public class Pulse {
 
 
     public enum PulseColor {
-        MULTI,WHITE,BLACK,RED,YELLOW,BLUE,PINK,GREEN,CYAN;
+        MULTI, WHITE, BLACK, RED, YELLOW, BLUE, PINK, GREEN, CYAN;
     }
+
     private ArrayList<String> frames = new ArrayList<>();
-    public Pulse(String text, PulseColor color,int pause) {
+
+    public Pulse(String text, PulseColor color, int pause) {
 
         switch (color) {
             case MULTI:
@@ -168,9 +170,11 @@ public class Pulse {
 
         }
     }
+
     private int frame = 0;
+
     public String next() {
-        if(frame >= frames.size())
+        if (frame >= frames.size())
             frame = 0;
         String s = frames.get(frame);
         frame++;

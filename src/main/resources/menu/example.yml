@@ -88,7 +88,7 @@ menu-settings:
     name: 'Example Menu'
 
 
-#If you add skull texture parameter you can set any ID you want
+#If you add skull texture parameter you can set any MATERIAL you want
 #Check the tutorial for skull texture
 bar-items:
   coins:
@@ -140,14 +140,15 @@ test-from-console:
   COMMAND: 'console: say Hello %player_displayname%!'
   NAME: '&fConsole.'
   LORE: 'It broadcasts your name with the command /say.'
-  ID: iron_block
+  MATERIAL: iron_block
+  MODEL-DATE: 1
 
 
 test-as-op:
   COMMAND: 'op: say Hello world!'
   NAME: '&6Op Command'
   LORE: '&6Be careful with this type of commands.'
-  ID: command_block
+  MATERIAL: command_block
 
 
 #You can find any place holder here: https://github.com/PlaceholderAPI/PlaceholderAPI/wiki/Placeholders
